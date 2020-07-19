@@ -10,6 +10,34 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <title>Hello, world!</title>
+    <script>
+      function validateForm() 
+        {
+          var x = document.forms["myForm"]["firstname"].value;
+          if (x == "") {
+            alert("Name must be filled out");
+            return false;
+          }
+          else
+          {
+              document.getElementById("zero").innerHTML="HELLO "+x+"! "+"Please fill all the details below";
+          }
+        }
+        function myFirst()
+        {
+          var y = document.forms["dForm"]["number"].value;
+          var z = document.forms["dForm"]["address"].value;
+          if (y == "" || z == "") {
+            alert("All details must be filled out");
+            return false;
+          }
+          else
+          {
+            document.getElementById("first").innerHTML="You have filled the form. Our client will contact you at the earliest.";   
+          }
+            
+        }
+      </script>
   </head>
   <body>
     
@@ -47,7 +75,42 @@
     <br>
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
-        <p class="h4" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color:black;">To view our whole range of products visit <a href="product.html">Our Products</a> page.<br>To know more about us visit our <a href="about.html">About Us</a> page.<br> To connect with us visit our <a href="contact.html">Contact Us</a> page.<br>To learn more about our team visit <a href="team.html">Our Team</a> page.</p>
+        <p class="h5" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color:black;">To view our whole range of products visit <a href="product.html">Our Products</a> page.<br>To know more about us visit our <a href="about.html">About Us</a> page.<br> To connect with us visit our <a href="contact.html">Contact Us</a> page.<br>To learn more about our team visit <a href="team.html">Our Team</a> page.</p>
+      </div>
+    </div>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <p class="h5" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Worried about the performance of your appliance. Don't worry we have got you. Fill the form below to avail our time to time check up services. <br>Brought your furniture or appliance from elsewhere and doubtful about its installation. We will set it up. Fill the form to avail the service.<br>Your appliance is not working properly? Fill the form. Our clients will get your appliance working.</p>
+        
+        <h1 class="h1">Form</h1>
+        <br>
+        <p class="h5">The Form will validate your inputs. Be sure while filling it.</p>
+        <p>
+          <form name="myForm">
+            <label for="firstname">First name:</label><br>
+            <input type="text" id="fname" name="firstname" required><br>
+            <label for="lastname">Last name:</label><br>
+            <input type="text" id="lname" name="lastname" required ><br><br>
+            <input type="button" class="button" value="Done" onclick="return validateForm()" ><br><br>
+          </form>
+          <p id="zero"></p>
+          <form name="dForm">
+            <label for="Services">Services:</label><br>
+            <input type="checkbox"  name="Services" value="Installation">
+            <label for="Services">Installation</label><br>
+            <input type="checkbox"  name="Services" value="Repair">
+            <label for="Clean">Repair</label><br>
+            <input type="checkbox"  name="Services" value="Check up">
+            <label for="Check up">Check up</label><br><br>
+            <label for="quantity">Phone number:</label><br>
+            <input type="number" name="number"><br><br>
+            <label for="address">Address:</label><br>
+            <input type="text" name="address" required><br>
+            <br>
+            <input type="button" onclick="return myFirst()" value="Submit"><br><br>
+            <p id="first"></p>
+          </form>
+        </p>
       </div>
     </div>
     
